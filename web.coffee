@@ -9,7 +9,6 @@ app = express.createServer(
   express.logger())
 
 app.get "/*", (req, res) ->
-  console.log req.query
   headers =
     "Proxy-Authorization": "Basic #{new Buffer(proxy.auth).toString("base64")}"
     "Host": "httpbin.org"
