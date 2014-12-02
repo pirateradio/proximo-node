@@ -11,14 +11,14 @@ app = express.createServer(
 app.get "/*", (req, res) ->
   headers =
     "Proxy-Authorization": "Basic #{new Buffer(proxy.auth).toString("base64")}"
-    "Host": "httpbin.org"
+    "Host": "www.httpbin.org"
   delete req.headers.host
   headers[key] = val for key, val of req.headers
 
   options =
     hostname: proxy.hostname
     port: proxy.port || 80
-    path: "http://httpbin.org/#{req.params[0]}?#{qs.stringify(req.query)}"
+    path: "http://www.httpbin.org/#{req.params[0]}?#{qs.stringify(req.query)}"
     headers: headers
 
   http.get options, (httpbin_res) ->
