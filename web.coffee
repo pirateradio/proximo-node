@@ -5,12 +5,11 @@ url     = require("url")
 
 proxy = url.parse(process.env.PROXIMO_URL)
 
-app = express.createServer(
-  express.logger())
+app = express()
 
 app.get "/*", (req, res) ->
   headers =
-    "Proxy-Authorization": "Basic #{new Buffer(proxy.auth).toString("base64")}"
+    "Proxy-Authorization": "Basic #{Buffer.from(proxy.auth).toString("base64")}"
     "Host": "httpbin.org"
   delete req.headers.host
   headers[key] = val for key, val of req.headers
