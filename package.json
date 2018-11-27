@@ -1,15 +1,13 @@
 {
-  "name":    "proximo-node",
+  "name": "proximo-node",
   "version": "0.0.1",
-
   "dependencies": {
     "coffeescript": "2.x",
-    "express":      "4.x",
-    "nodemon":      "1.x"
+    "express": "4.x",
+    "nodemon": "^1.18.7"
   },
-
   "engines": {
     "node": "0.8.x",
-    "npm":  "1.1.x"
+    "npm": "1.1.x"
   }
 }
