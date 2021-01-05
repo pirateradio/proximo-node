@@ -5,9 +5,5 @@
     "coffeescript": "2.x",
     "express": "4.x",
     "nodemon": "^2.0.4"
-  },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
   }
 }
